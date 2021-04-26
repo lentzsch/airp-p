@@ -4,11 +4,23 @@ const { Validator } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
-    username: {
+    firstName: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [4, 30],
+        len: [1, 30],
+        isNotEmail(value) {
+          if (Validator.isEmail(value)) {
+            throw new Error('Cannot be an email.');
+          }
+        },
+      },
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1, 30],
         isNotEmail(value) {
           if (Validator.isEmail(value)) {
             throw new Error('Cannot be an email.');
@@ -23,6 +35,23 @@ module.exports = (sequelize, DataTypes) => {
         len:[3, 256]
       },
     },
+    PPLNumber: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        len:[7, 14]
+      }
+    },
+    certificationsId: {
+      type: dataTypes.INTEGER,
+    },
+    hours: {
+      type: dataTypes.INTEGER,
+      allowNull: false,
+    },
+    aircraftId: {
+      type: dataTypes.INTEGER,
+    },
     hashedPassword: {
       type: DataTypes.STRING.BINARY,
       allowNull: false,
@@ -30,7 +59,7 @@ module.exports = (sequelize, DataTypes) => {
         len: [60, 60]
       },
     },
-  }, 
+  },
   {
     defaultScope: {
       attributes: {
