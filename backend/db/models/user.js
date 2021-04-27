@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
         len:[3, 256]
       },
     },
-    PPLNumber: {
+    pplNumber: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },

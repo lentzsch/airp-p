@@ -10,7 +10,7 @@ module.exports = {
           firstName: 'Demo',
           lastName: 'Lition',
           email: 'demo@user.io',
-          PPLNumber: 3948441,
+          pplNumber: 3948441,
           certificationsId: null,
           hours: 500,
           aircraftId: null,

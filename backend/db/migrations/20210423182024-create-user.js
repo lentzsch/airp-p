@@ -21,7 +21,7 @@ module.exports = {
         allowNull: false,
         unique: true
       },
-      PPLNumber: {
+      pplNumber: {
         type: Sequelize.INTEGER,
         allowNull: false,
         unique: true
