@@ -38,9 +38,6 @@ module.exports = (sequelize, DataTypes) => {
     PPLNumber: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        len:[7, 14]
-      }
     },
     certificationsId: {
       type: dataTypes.INTEGER,
