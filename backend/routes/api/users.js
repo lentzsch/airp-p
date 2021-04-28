@@ -1,3 +1,4 @@
+// backend/routes/api/user.js
 const express = require('express')
 const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
@@ -12,14 +13,26 @@ const validateSignup = [
         .exists({ checkFalsy: true })
         .isEmail()
         .withMessage('Please provide a valid email.'),
-    check('username')
+    check('First Name')
         .exists({ checkFalsy: true })
-        .isLength({ min: 4 })
-        .withMessage('Please provide a username with at leats 4 characters.'),
-    check('username')
+        .isLength({ min: 2 })
+        .withMessage('Please provide a first name with at least 2 characters.'),
+    check('firstName')
         .not()
         .isEmail()
-        .withMessage('Username cannot be an email.'),
+        .withMessage('First name cannot be an email.'),
+    check('lastName')
+        .exists({ checkFalsy: true })
+        .isLength({ min: 2 })
+        .withMessage('Please provide a lat name with at least 2 characters.'),
+    check('lastName')
+        .not()
+        .isEmail()
+        .withMessage('Last name cannot be an email.'),
+    check('pplNumber')
+        .exists({checkFalsey: true})
+        .isLength({min: 7, max: 7})
+        .withMessage('Certificate number must be 7 numbers'),
     check('password')
         .exists({ checkFalsy: true })
         .isLength({ min: 6 })
@@ -32,9 +45,9 @@ router.post(
     '',
     validateSignup,
     asyncHandler(async (req, res) => {
-        const { email, password, username } = req.body;
-        const user = await User.signup({ email, username, password });
-
+        const { firstName, lastName, email, pplNumber, hours, password } = req.body;
+        const user = await User.signup({ firstName, lastName, email, pplNumber, hours, password });
+        consol.log(user);
         await setTokenCookie(res, user);
 
         return res.json({
