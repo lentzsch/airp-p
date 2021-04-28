@@ -35,11 +35,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    numOfEngines: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    turbine: {
+    multiEngine: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
@@ -53,8 +49,40 @@ module.exports = (sequelize, DataTypes) => {
     },
     userId: {
       type: DataTypes.INTEGER,
+    },
+    ownerId: {
+      type: DataTypes.INTEGER,
     }
   }, {});
+
+  Aircraft.register = async function ({ 
+    year,
+    make, 
+    model, 
+    tailNum, 
+    ifr, 
+    multiEngine, 
+    currentLocationId,
+    homeAirportId,
+    userId,
+    onwerId
+   }) {
+
+    const aircraft = await Aircraft.create({
+      year,
+      make,
+      model,
+      tailNum,
+      ifr,
+      multiEngine,
+      currentLocationId,
+      homeAirportId,
+      userId,
+      onwerId
+    });
+    return await Aircraft.findByPk(user.id)
+  }
+
   Aircraft.associate = function(models) {
     // associations can be defined here
   };

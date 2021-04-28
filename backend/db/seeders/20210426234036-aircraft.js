@@ -9,9 +9,8 @@ module.exports = {
         make: 'Cessna',
         model: '152',
         tailNumber: 'N704UT',
-        IFR: false,
-        numOfEngines: 1,
-        turbine: false,
+        ifr: false,
+        multiEngine: false,
         currentLocationId: 1,
         homeAirportId: 1,
         userId: null

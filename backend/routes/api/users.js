@@ -13,7 +13,7 @@ const validateSignup = [
         .exists({ checkFalsy: true })
         .isEmail()
         .withMessage('Please provide a valid email.'),
-    check('First Name')
+    check('firstName')
         .exists({ checkFalsy: true })
         .isLength({ min: 2 })
         .withMessage('Please provide a first name with at least 2 characters.'),
@@ -47,7 +47,7 @@ router.post(
     asyncHandler(async (req, res) => {
         const { firstName, lastName, email, pplNumber, hours, password } = req.body;
         const user = await User.signup({ firstName, lastName, email, pplNumber, hours, password });
-        consol.log(user);
+
         await setTokenCookie(res, user);
 
         return res.json({

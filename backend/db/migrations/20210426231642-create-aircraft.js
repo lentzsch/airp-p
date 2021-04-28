@@ -25,15 +25,11 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
-      IFR: {
+      ifr: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
       },
-      numOfEngines: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      turbine: {
+      multiEngine: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
       },
@@ -46,6 +42,9 @@ module.exports = {
         allowNull: false,
       },
       userId: {
+        type: Sequelize.INTEGER
+      },
+      ownerId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

@@ -85,7 +85,7 @@ function SighnupFormPage() {
             <label>
                 Certificate Number
                 <input
-                    type="text"
+                    type="number"
                     value={pplNumber}
                     onChange={(e) => setPplNumber(e.target.value)}
                     required
@@ -96,7 +96,7 @@ function SighnupFormPage() {
             <label>
                 Hours
                 <input
-                    type="text"
+                    type="number"
                     value={hours}
                     onChange={(e) => setHours(e.target.value)}
                     required
