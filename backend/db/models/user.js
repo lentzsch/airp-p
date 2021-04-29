@@ -49,9 +49,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    aircraftId: {
-      type: DataTypes.INTEGER,
-    },
     hashedPassword: {
       type: DataTypes.STRING.BINARY,
       allowNull: false,

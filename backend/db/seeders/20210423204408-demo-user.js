@@ -13,7 +13,15 @@ module.exports = {
           pplNumber: 3948441,
           certificationsId: null,
           hours: 500,
-          aircraftId: null,
+          hashedPassword: bcrypt.hashSync('password'),
+        },
+        {
+          firstName: 'Owner',
+          lastName: 'McPwnd',
+          email: 'demo@owner.io',
+          pplNumber: 3948442,
+          certificationsId: null,
+          hours: 501,
           hashedPassword: bcrypt.hashSync('password'),
         },
         // {

@@ -33,6 +33,18 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         allowNull: false,
       },
+      imageUrl1: {
+        type: Sequelize.STRING
+      },
+      imageUrl2: {
+        type: Sequelize.STRING
+      },
+      imageUrl3: {
+        type: Sequelize.STRING
+      },
+      imageUrl4: {
+        type: Sequelize.STRING
+      },
       currentLocationId: {
         type: Sequelize.INTEGER,
         allowNull: false,

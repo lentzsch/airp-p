@@ -1,0 +1,36 @@
+// backend/routs/api/gallery.js
+const express = require('express')
+const asyncHandler = require('express-async-handler')
+const router = express.Router()
+const { User, Aircraft, Airport } = require('../../db/models')
+
+/***************** GET ALL AIRCRAFT ****************/
+router.get('', asyncHandler(async (req, res) => {
+    const aircaft = await Aircraft.findAll({
+        where: {
+            userId: null
+        }
+    })
+
+    return res.json({
+        aircaft,
+    })
+}))
+
+/************** GET FILTERED AIRCRAFT *************/
+router.get('/:airportId(\\d)', asyncHandler(async (req, res) => {
+
+    const airportId = parseInt(req.params.airportId, 10)
+
+    const filteredAircraft = await Aircraft.findAll({
+        where: {
+            currentLocationId: airportId
+        }
+    })
+
+    return res.json({
+        filteredAircraft,
+    })
+}))
+
+module.exports = router;

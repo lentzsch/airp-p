@@ -9,6 +9,36 @@ module.exports = {
         name: 'Santa Paula Airport',
         city: 'Santa Paula',
         state: 'California',
+        },
+        {
+          iataCode: 'ADS',
+          name: 'Addison Airport',
+          city: 'Addison',
+          state: 'Texas',
+        },
+        {
+          iataCode: 'WHP',
+          name: 'Whitman Airport',
+          city: 'Pacioma',
+          state: 'California',
+        },
+        {
+          iataCode: 'GLS',
+          name: 'Scholes International Airport',
+          city: 'Galviston',
+          state: 'Texas',
+        },
+        {
+          iataCode: 'VNY',
+          name: 'Van Nuys Airport',
+          city: 'Van Nuys',
+          state: 'California',
+        },
+        {
+          iataCode: 'FGU',
+          name: 'Collegedale Municipal Airport',
+          city: 'Apison',
+          state: 'Tennessee'
         }
     ], {});
     

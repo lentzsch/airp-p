@@ -33,10 +33,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      aircraftId: {
-        type: Sequelize.INTEGER,
-        unique: true
-      },
       hashedPassword: {
         type: Sequelize.STRING.BINARY,
         allowNull: false

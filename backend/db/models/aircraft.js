@@ -1,5 +1,5 @@
 'use strict';
-const { Validator } = require('sequelize');
+const { Validator, BelongsTo } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   const Aircraft = sequelize.define('Aircraft', {
@@ -31,13 +31,25 @@ module.exports = (sequelize, DataTypes) => {
         len: [6, 6]
       }
     },
-    IFR: {
+    ifr: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     multiEngine: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+    },
+    imageUrl1: {
+      type: DataTypes.STRING,
+    },
+    imageUrl2: {
+      type: DataTypes.STRING,
+    },
+    imageUrl3: {
+      type: DataTypes.STRING,
+    },
+    imageUrl4: {
+      type: DataTypes.STRING,
     },
     currentLocationId: {
       type: DataTypes.INTEGER,
@@ -55,36 +67,36 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
 
-  Aircraft.register = async function ({ 
-    year,
-    make, 
-    model, 
-    tailNum, 
-    ifr, 
-    multiEngine, 
-    currentLocationId,
-    homeAirportId,
-    userId,
-    onwerId
-   }) {
+  // Aircraft.register = async function ({ 
+  //   year,
+  //   make, 
+  //   model, 
+  //   tailNum, 
+  //   ifr, 
+  //   multiEngine, 
+  //   currentLocationId,
+  //   homeAirportId,
+  //   userId,
+  //   onwerId
+  //  }) {
 
-    const aircraft = await Aircraft.create({
-      year,
-      make,
-      model,
-      tailNum,
-      ifr,
-      multiEngine,
-      currentLocationId,
-      homeAirportId,
-      userId,
-      onwerId
-    });
-    return await Aircraft.findByPk(user.id)
-  }
+  //   const aircraft = await Aircraft.create({
+  //     year,
+  //     make,
+  //     model,
+  //     tailNum,
+  //     ifr,
+  //     multiEngine,
+  //     currentLocationId,
+  //     homeAirportId,
+  //     userId,
+  //     onwerId
+  //   });
+  //   return await Aircraft.findByPk(user.id)
+  // }
 
   Aircraft.associate = function(models) {
-    // associations can be defined here
+    
   };
   return Aircraft;
 };
