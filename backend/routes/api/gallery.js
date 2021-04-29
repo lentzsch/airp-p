@@ -17,9 +17,17 @@ router.get('', asyncHandler(async (req, res) => {
     })
 }))
 
+/****************** GET AIRPORTS ******************/
+router.get('/airports', asyncHandler(async (req, res) => {
+    const airports = await Airport.findAll()
+
+    return res.json({
+        airports,
+    })
+}))
+
 /************** GET FILTERED AIRCRAFT *************/
 router.get('/:airportId(\\d)', asyncHandler(async (req, res) => {
-
     const airportId = parseInt(req.params.airportId, 10)
 
     const filteredAircraft = await Aircraft.findAll({
@@ -30,7 +38,7 @@ router.get('/:airportId(\\d)', asyncHandler(async (req, res) => {
 
     return res.json({
         filteredAircraft,
-    })
-}))
+    });
+}));
 
 module.exports = router;

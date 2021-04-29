@@ -28,11 +28,14 @@ function LoginFormPage() {
 
     return (
         <form onSubmit={handleSubmit}>
+            <div>
             <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
+            </div>
+            <div>
             <label>
-                Username or Email
+                Certificate number or Email
                 <input
                     type="text"
                     value={credential}
@@ -40,6 +43,8 @@ function LoginFormPage() {
                     required
                 />
             </label>
+            </div>
+            <div>
             <label>
                 Password
                 <input
@@ -49,7 +54,10 @@ function LoginFormPage() {
                     required
                 />
             </label>
+            </div>
+            <div>
             <button type="submit">Log In</button>
+            </div>
         </form>
     );
 }
