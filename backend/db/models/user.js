@@ -85,18 +85,25 @@ module.exports = (sequelize, DataTypes) => {
 
   User.login = async function ({ credential, password }) {
     const { Op } = require('sequelize');
-    const user = await User.scope('loginUser').findOne({
-      where: {
-        [Op.or]: {
-          // pplNumber: credential,
-          email: credential,
-        },
-      },
-    });
+    let user; 
+    if (typeof credential === "number") {
+      user = await User.scope('loginUser').findOne({
+        where: {
+            pplNumber: credential,
+          },
+      })
+    } else {
+      user = await User.scope('loginUser').findOne({
+        where: {
+            email: credential,
+          },
+        });
+      }
+   
     if (user && user.validatePassword(password)) {
       return await User.scope('currentUser').findByPk(user.id);
     }
-  };
+  }
 
   User.signup = async function ({ firstName, lastName, email, pplNumber, hours, password }) {
     const hashedPassword = bcrypt.hashSync(password);

@@ -3,6 +3,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 const router = express.Router();
 const { User, Aircraft, Airport } = require('../../db/models');
+const { restoreUser } = require('../../utils/auth')
 
 /***************** GET AIRCRAFT INFO  *****************/
 router.get('/:aircraftId(\\d)', asyncHandler(async (req, res) => {
@@ -16,9 +17,9 @@ router.get('/:aircraftId(\\d)', asyncHandler(async (req, res) => {
 }));
 
 /****************** BOOK AIRCRAFT ******************/
-router.put('/:aircraftId(\\d)/book', asyncHandler(async (req, res) => {
+router.put('/:aircraftId(\\d)/book', restoreUser, asyncHandler(async (req, res) => {
     const aircraftId = parseInt(req.params.aircraftId, 10)
-    const userId = 1
+    const userId = req.user.id
     // console.log('userId ------------>', req)
     const aircraft = await Aircraft.findByPk(aircraftId)
 
