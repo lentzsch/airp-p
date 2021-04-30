@@ -9,16 +9,17 @@ const load = (list) => ({
 })
 
 export const getAircraft = () => async (dispatch) => {
-    const res = await fetch(`/api/gallery`);
+    const res = await csrfFetch(`/api/gallery`, {method: "GET"});
 
     if (res.ok) {
         const list = await res.json();
+        // console.log(Array.isArray(list))
         dispatch(load(list))
     }
 }
 
 export const getFilteredAircraft = (id) => async (dispatch) => {
-    const res = await fetch(`/api/gallery/${id}`);
+    const res = await csrfFetch(`/api/gallery/${id}`);
     
     if (res.ok) {
         const list = await res.json();
@@ -28,7 +29,7 @@ export const getFilteredAircraft = (id) => async (dispatch) => {
 }
 
 export const getSingleAircraft = (id) => async (dispatch) => {
-    const res = await fetch(`/api/aircraft/${id}`);
+    const res = await csrfFetch(`/api/aircraft/${id}`);
 
     if (res.ok) {
         const aircraft = await res.json();
@@ -42,7 +43,7 @@ const galleryReducer = (state = initialState, action) => {
         case LOAD: {
             const allAircraft = {};
             action.list.forEach((aircraft) => {
-                allAircraft[aircraft.id] = aircraft;
+                return allAircraft[aircraft.id] = aircraft;
             });
             return {
                 ...allAircraft,

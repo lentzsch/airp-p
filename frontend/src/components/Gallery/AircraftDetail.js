@@ -6,10 +6,10 @@ import { getAircraft, getSingleAircraft } from "../../store/gallery";
 const AircraftDetail = () => {
     const { aircraftId } = useParams();
     const dispatch = useDispatch();
-    const aircraft = useSelector((state) => state.aircraft[aircraftId]);
-    
+    const aircraft = useSelector(state => Object.values(state.gallery[aircraftId]))
+    console.log('aircraft------------>', aircraft)
     useEffect(() => {
-        dispatch(getAircraft(aircraftId))
+        dispatch(getSingleAircraft(aircraftId))
     })
 
     if (!aircraft) {
