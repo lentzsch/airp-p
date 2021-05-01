@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { NavLink, Route } from 'react-router-dom';
 import { csrfFetch } from "../../store/csrf"
-import AirportSelector from './AirportSelector';
+// import AirportSelector from './AirportSelector';
 import AircraftDetail from './AircraftDetail'
 import { getAircraft, getFilteredAircraft } from '../../store/gallery';
 import image from '../../images/aircraft-images/plane-1/plane-1-image-1.jpg'
@@ -39,7 +39,7 @@ const GalleryBrowser = () => {
 
     return (
         <main>
-            <AirportSelector/>
+            {/* <AirportSelector/> */}
             <nav>
                 {aircraft?.map((aircraft) => {
                     // let image = aircraft.imageUrl1

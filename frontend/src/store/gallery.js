@@ -19,12 +19,21 @@ export const getAircraft = () => async (dispatch) => {
 }
 
 export const getFilteredAircraft = (id) => async (dispatch) => {
-    console.log('id ---------->', id)
-    const res = await csrfFetch(`/api/gallery/${id}`);
-    
-    if (res.ok) {
-        const list = await res.json();
-        dispatch(load(list))
+    if(id) {
+        const res = await csrfFetch(`/api/gallery/${id}`);
+        
+        if (res.ok) {
+            const list = await res.json();
+            dispatch(load(list))
+        }
+    } else {
+        const res = await csrfFetch(`/api/gallery`, { method: "GET" });
+
+        if (res.ok) {
+            const list = await res.json();
+            // console.log(Array.isArray(list))
+            dispatch(load(list))
+        }
     }
 
 }

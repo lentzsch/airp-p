@@ -25,12 +25,14 @@ const AirportSelector = () => {
     }
     return (
         <div className="airport-selector">
+            <h3>Filter by Airport</h3>
             <select
                 id="airports"
                 name="airports"
-                onChange={(e) => getFilteredAircraft(e.target.value)}
+                onChange={(e) => dispatch(getFilteredAircraft(e.target.value))}
             >
-                <option value="" disabled>Filter by Aiport</option>
+                <option value="">All</option>
+
                 {airports?.map((airport) => {
                     return (
                         <option key={airport.id} value={airport.id}>{airport.iataCode}</option>

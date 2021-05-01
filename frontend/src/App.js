@@ -7,6 +7,7 @@ import SignupFormPage from './components/SignupFormPage';
 import * as sessionActions from './store/session';
 import Navigation from "./components/Navigation";
 import Gallery from "./components/Gallery";
+import AirportSelector from "./components/Gallery/AirportSelector"
 
 function App() {
   const distpatch = useDispatch();
@@ -28,6 +29,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      <AirportSelector/>
       <Gallery/>
   </>
   );
