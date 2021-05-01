@@ -1,1 +1,35 @@
 /*  frontend/src/components/Navigation/Navigation.css */
+.nav-bar {
+    display: flex;
+    background-color: rgb(38, 80, 156);
+    height: 40px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-signup {
+    display: flex;
+    justify-content: space-between;
+    width: 125px;
+}
+
+.profile-button {
+    padding-right: 20px;
+}
+
+.home-link {
+    text-decoration: none;
+    color: white;
+    padding-left: 20px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:900;
+}
+
+.profile-dropdoun {
+    padding: 6px;
+    position: absolute;
+}
+
+

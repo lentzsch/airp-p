@@ -24,8 +24,9 @@ const AirportSelector = () => {
         return null;
     }
     return (
-        <div className="airport-selector">
-            <h3>Filter by Airport</h3>
+        <div className="airport-selector-container">
+            <p>Filter by Airport</p>
+            <div className="airport-selector">
             <select
                 id="airports"
                 name="airports"
@@ -39,6 +40,7 @@ const AirportSelector = () => {
                     )
                 })}
                 </select>
+            </div>
         </div>
     )
 }

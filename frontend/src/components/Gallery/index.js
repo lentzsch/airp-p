@@ -7,6 +7,7 @@ import { csrfFetch } from "../../store/csrf"
 import AircraftDetail from './AircraftDetail'
 import { getAircraft, getFilteredAircraft } from '../../store/gallery';
 import image from '../../images/aircraft-images/plane-1/plane-1-image-1.jpg'
+import './Gallery.css'
 
 const GalleryBrowser = () => {
     const dispatch = useDispatch()
@@ -38,35 +39,25 @@ const GalleryBrowser = () => {
     }
 
     return (
-        <main>
+        <main className="gallery">
             {/* <AirportSelector/> */}
             <nav>
                 {aircraft?.map((aircraft) => {
                     // let image = aircraft.imageUrl1
                     // console.log(image)
                     return (
-                        <NavLink key={aircraft.id} to={`/aircraft/${aircraft.id}`}>
+                            <div className=" aircarft-container">
+                        <NavLink key={aircraft.id} to={`/aircraft/${aircraft.id}`} className="aircraft-link">
                             
-                            <div
-                                // className={
-                                //     Number.parseInt(aircraftId) === aircraft.id
-                                //         ? "nav-entry is selected"
-                                //         : "nav-entry"
-                                // }
-                            >
-                                {/* <div
-                                    className="nav-entry-image"
-                                    style={{ backgroundImage: `url('${image}')` }}
-                                ></div> */}
-                                <img src={image} alt=''/>
+                                <img src={image} alt='' className="aircaft-image"/>
                                 <div>
                                     <div className="primary-text">{`${aircraft.year} ${aircraft.make} ${aircraft.model}`}</div>
                                     <div className="secondary-text">
                                         Place Holder Text Here
                                     </div>
                                 </div>
-                            </div>
                         </NavLink>
+                            </div>
                     );
                 })}
             </nav>
