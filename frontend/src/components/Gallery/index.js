@@ -6,7 +6,7 @@ import { NavLink, Route } from 'react-router-dom';
 import AirportSelector from './AirportSelector';
 import AircraftDetail from './AircraftDetail'
 import { getAircraft } from '../../store/gallery';
-import images from '../../images/aircraft-images/plane-1/plane-1-image-1.jpg'
+// import image from '../../images/aircraft-images/plane-1/plane-1-image-1.jpg'
 
 const GalleryBrowser = () => {
     const dispatch = useDispatch()

@@ -8,7 +8,7 @@ const AircraftDetail = () => {
     const { aircraftId } = useParams();
     const dispatch = useDispatch();
     const aircraft = useSelector(state => (state.gallery[aircraftId]))
-    const currentLocation = aircraft.Airport.iataCode
+    const currentLocation = aircraft?.Airport.iataCode
     useEffect(() => {
         dispatch(getSingleAircraft(aircraftId))
     })
@@ -18,7 +18,7 @@ const AircraftDetail = () => {
     }
 
     async function bookAircraft(id) {
-        const res = await csrfFetch(`api/aircraft/${id}/book`)
+        const res = await csrfFetch(`/api/aircraft/${id}/book`, {method: "PUT"})
         return
     }
 
@@ -44,7 +44,7 @@ const AircraftDetail = () => {
                     </li>
                 </ul>
                 <div>
-                    <button onClick={bookAircraft(aircraftId)}>Book this aircraft</button>
+                    <button onClick={() => bookAircraft(aircraftId)}>Book this aircraft</button>
                 </div>
             </div>
         </div>

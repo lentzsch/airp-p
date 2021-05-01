@@ -11,7 +11,7 @@ module.exports = {
         tailNumber: 'N4852P',
         ifr: false,
         multiEngine: false,
-        imageUrl1: '../../aircraft-images/plane-1/plane-1-image-1.jpg',
+        imageUrl1: 'https://compote.slate.com/images/222e0b84-f164-4fb1-90e7-d20bc27acd8c.jpg?width=1600',
         imageUrl2: '../../images/aircraft-images/plane-1-image-2',
         imageUrl3: '../../images/aircraft-images/plane-1-image-3',
         imageUrl4: '../../images/aircraft-images/plane-1-image-4',

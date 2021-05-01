@@ -12,7 +12,7 @@ router.get('', asyncHandler(async (req, res) => {
         },
         include: Airport
     })
-    console.log('aircraft ------------>',aircraft)
+    // console.log('aircraft ------------>',aircraft)
     return res.json(
         aircraft,
     )
