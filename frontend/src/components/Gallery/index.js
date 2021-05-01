@@ -6,7 +6,7 @@ import { NavLink, Route } from 'react-router-dom';
 import AirportSelector from './AirportSelector';
 import AircraftDetail from './AircraftDetail'
 import { getAircraft } from '../../store/gallery';
-import image from '../../images/aircraft-images/plane-1/plane-1-image-1.jpg'
+import images from '../../images/aircraft-images/plane-1/plane-1-image-1.jpg'
 
 const GalleryBrowser = () => {
     const dispatch = useDispatch()
@@ -17,7 +17,7 @@ const GalleryBrowser = () => {
     }, [dispatch])
 
     const aircraft = useSelector(state => Object.values(state.gallery))
-    console.log('aircraft --------->', aircraft)
+    // console.log('aircraft --------->', )
 
     // if (!aircraft.length) {
     //     return null;
@@ -27,6 +27,8 @@ const GalleryBrowser = () => {
         <main>
             <nav>
                 {aircraft?.map((aircraft) => {
+                    // let image = aircraft.imageUrl1
+                    // console.log(image)
                     return (
                         <NavLink key={aircraft.id} to={`/aircraft/${aircraft.id}`}>
                             <div
@@ -38,9 +40,9 @@ const GalleryBrowser = () => {
                             >
                                 {/* <div
                                     className="nav-entry-image"
-                                    style={{ image: image }}
+                                    style={{ backgroundImage: `url('${image}')` }}
                                 ></div> */}
-                                <img src={image} alt=''/>
+                                <img src={aircraft.imageUrl1} alt=''/>
                                 <div>
                                     <div className="primary-text">{`${aircraft.year} ${aircraft.make} ${aircraft.model}`}</div>
                                     <div className="secondary-text">

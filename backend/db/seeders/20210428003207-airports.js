@@ -39,6 +39,18 @@ module.exports = {
           name: 'Collegedale Municipal Airport',
           city: 'Apison',
           state: 'Tennessee'
+        },
+        {
+          iataCode: 'APA',
+          name: 'Centennial Airport',
+          city: 'Englewood',
+          state: 'Colorado'
+        },
+        {
+          iataCode: 'ADF',
+          name: 'Dexter B. Florence Memorial Field',
+          city: 'Arkadelphia',
+          state: 'Arkansas'
         }
     ], {});
     

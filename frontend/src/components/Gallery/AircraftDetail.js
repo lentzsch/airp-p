@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router";
 import { getAircraft, getSingleAircraft } from "../../store/gallery";
-import { csrfFetch } from "../../store/csrf";
+import { csrfFetch } from "../../store/csrf"
 
 const AircraftDetail = () => {
     const { aircraftId } = useParams();
@@ -19,7 +19,7 @@ const AircraftDetail = () => {
 
     async function bookAircraft(id) {
         const res = await csrfFetch(`api/aircraft/${id}/book`)
-        // return res.redirect('/')
+        return
     }
 
     let content = (
@@ -55,7 +55,7 @@ const AircraftDetail = () => {
             <div className={`aircraft-detail-image-background`}>
                 <div
                     className="aircraft-detail-image"
-                    style={{backgroundImag: `url('${aircraft.immageUrl1})`}}
+                    style={{backgroundImage: `url('${aircraft.immageUrl1})`}}
                 ></div>
             </div>
             {content}
