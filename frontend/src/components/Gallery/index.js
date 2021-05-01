@@ -17,7 +17,7 @@ const GalleryBrowser = () => {
     }, [dispatch])
 
     const aircraft = useSelector(state => Object.values(state.gallery))
-    console.log(aircraft)
+    console.log('aircraft --------->', aircraft)
 
     // if (!aircraft.length) {
     //     return null;

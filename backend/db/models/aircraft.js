@@ -1,6 +1,4 @@
 'use strict';
-const { Validator, BelongsTo } = require('sequelize');
-
 module.exports = (sequelize, DataTypes) => {
   const Aircraft = sequelize.define('Aircraft', {
     year: {
@@ -67,6 +65,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
 
+ 
+
   // Aircraft.register = async function ({ 
   //   year,
   //   make, 
@@ -96,7 +96,8 @@ module.exports = (sequelize, DataTypes) => {
   // }
 
   Aircraft.associate = function(models) {
-    
+    Aircraft.belongsTo(models.Airport, { foreignKey: "homeAirportId" })
+    Aircraft.belongsTo(models.Airport, { foreignKey: "currentLocationId" })
   };
   return Aircraft;
 };

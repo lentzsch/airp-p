@@ -6,14 +6,15 @@ const { User, Aircraft, Airport } = require('../../db/models')
 
 /***************** GET ALL AIRCRAFT ****************/
 router.get('', asyncHandler(async (req, res) => {
-    const aircaft = await Aircraft.findAll({
+    const aircraft = await Aircraft.findAll({
         where: {
-            userId: null
-        }
+            userId: null,
+        },
+        include: Airport
     })
-
+    console.log('aircraft ------------>',aircraft)
     return res.json(
-        aircaft,
+        aircraft,
     )
 }))
 

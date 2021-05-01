@@ -9,7 +9,9 @@ const { restoreUser } = require('../../utils/auth')
 router.get('/:aircraftId(\\d)', asyncHandler(async (req, res) => {
     const aircraftId = parseInt(req.params.aircraftId, 10)
     // console.log('aircraftId ------------>', aircraftId)
-    const aircraft = await Aircraft.findByPk(aircraftId);
+    const aircraft = await Aircraft.findByPk(aircraftId, {
+        include: Aircraft
+    });
 
     return res.json({
         aircraft,

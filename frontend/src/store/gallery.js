@@ -36,6 +36,7 @@ export const getSingleAircraft = (id) => async (dispatch) => {
         dispatch(getAircraft(aircraft))
     }
 }
+
 const initialState = {};
 
 const galleryReducer = (state = initialState, action) => {

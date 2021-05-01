@@ -22,7 +22,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Airport.associate = function(models) {
-    // associations can be defined here
-  };
+    Airport.hasMany(models.Aircraft, { foreignKey: "homeAirportId"}) 
+    Airport.hasMany(models.Aircraft, { foreignKey: "currentLocationId" })
+  }
   return Airport;
-};
+  
+}

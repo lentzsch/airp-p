@@ -16,7 +16,7 @@ module.exports = {
         imageUrl3: '../../images/aircraft-images/plane-1-image-3',
         imageUrl4: '../../images/aircraft-images/plane-1-image-4',
         currentLocationId: 6,
-        homeAirportId: 6,
+        homeAirportId: 1,
         userId: null,
         ownerId: null
       },
@@ -33,7 +33,7 @@ module.exports = {
           imageUrl4: '../../images/aircraft-images/plane-2-image-4',
           currentLocationId: 3,
           homeAirportId: 2,
-          userId: 1,
+          userId: null,
           ownerId: null
         },
         {
