@@ -19,6 +19,7 @@ export const getAircraft = () => async (dispatch) => {
 }
 
 export const getFilteredAircraft = (id) => async (dispatch) => {
+    console.log('id ---------->', id)
     const res = await csrfFetch(`/api/gallery/${id}`);
     
     if (res.ok) {
@@ -29,11 +30,13 @@ export const getFilteredAircraft = (id) => async (dispatch) => {
 }
 
 export const getSingleAircraft = (id) => async (dispatch) => {
-    const res = await csrfFetch(`/api/aircraft/${id}`);
-
-    if (res.ok) {
-        const aircraft = await res.json();
-        dispatch(getAircraft(aircraft))
+    if (id) {
+        const res = await csrfFetch(`/api/aircraft/${id}`);
+    
+        if (res.ok) {
+            const aircraft = await res.json();
+            dispatch(getAircraft(aircraft))
+        }
     }
 }
 

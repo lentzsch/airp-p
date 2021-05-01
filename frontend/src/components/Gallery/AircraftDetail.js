@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router";
-import { getAircraft, getSingleAircraft } from "../../store/gallery";
+import { getSingleAircraft } from "../../store/gallery";
 import { csrfFetch } from "../../store/csrf"
 
 const AircraftDetail = () => {
@@ -10,15 +10,19 @@ const AircraftDetail = () => {
     const aircraft = useSelector(state => (state.gallery[aircraftId]))
     const currentLocation = aircraft?.Airport.iataCode
     useEffect(() => {
-        dispatch(getSingleAircraft(aircraftId))
-    })
+        if (aircraftId) {
+            dispatch(getSingleAircraft(aircraftId))
+        }
+    }, [dispatch, aircraftId])
 
     if (!aircraft) {
         return null;
     }
 
     async function bookAircraft(id) {
+
         const res = await csrfFetch(`/api/aircraft/${id}/book`, {method: "PUT"})
+        
         return
     }
 
