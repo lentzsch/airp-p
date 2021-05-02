@@ -34,16 +34,7 @@ module.exports = {
         allowNull: false,
       },
       imageUrl1: {
-        type: Sequelize.STRING
-      },
-      imageUrl2: {
-        type: Sequelize.STRING
-      },
-      imageUrl3: {
-        type: Sequelize.STRING
-      },
-      imageUrl4: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       currentLocationId: {
         type: Sequelize.INTEGER,

@@ -38,16 +38,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     imageUrl1: {
-      type: DataTypes.STRING,
-    },
-    imageUrl2: {
-      type: DataTypes.STRING,
-    },
-    imageUrl3: {
-      type: DataTypes.STRING,
-    },
-    imageUrl4: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     currentLocationId: {
       type: DataTypes.INTEGER,

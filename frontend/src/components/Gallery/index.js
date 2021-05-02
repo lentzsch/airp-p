@@ -49,7 +49,7 @@ const GalleryBrowser = () => {
                             <div className=" aircarft-container">
                         <NavLink key={aircraft.id} to={`/aircraft/${aircraft.id}`} className="aircraft-link">
                             
-                                <img src={image} alt='' className="aircaft-image"/>
+                                <img src={aircraft.imageUrl1} alt='' className="aircaft-image"/>
                                 <div>
                                     <div className="primary-text">{`${aircraft.year} ${aircraft.make} ${aircraft.model}`}</div>
                                     <div className="secondary-text">
