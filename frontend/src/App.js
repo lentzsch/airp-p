@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux'
 import { Route, Switch } from 'react-router-dom';
-import LoginFormPage from './components/LoginForm';
-import SignupFormPage from './components/SignupFormPage';
+import LoginForm from './components/LoginForm';
+import SignupForm from './components/SignupForm';
 import * as sessionActions from './store/session';
 import Navigation from "./components/Navigation";
 import Gallery from "./components/Gallery";
 import AirportSelector from "./components/Gallery/AirportSelector"
+import Footer from "./components/Footer"
 
 function App() {
   const distpatch = useDispatch();
@@ -22,15 +23,16 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route path="/login">
-            <LoginFormPage />
+            <LoginForm />
           </Route>
           <Route path="/signup">
-            <SignupFormPage />
+            <SignupForm />
           </Route>
         </Switch>
       )}
       <AirportSelector/>
       <Gallery/>
+      <Footer/>
   </>
   );
 }

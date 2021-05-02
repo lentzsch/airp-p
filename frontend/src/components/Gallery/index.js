@@ -1,12 +1,9 @@
 // frontend/src/components/Gallery/index.js
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { NavLink, Route } from 'react-router-dom';
-import { csrfFetch } from "../../store/csrf"
-// import AirportSelector from './AirportSelector';
+import { NavLink, Link, Route } from 'react-router-dom';
 import AircraftDetail from './AircraftDetail'
-import { getAircraft, getFilteredAircraft } from '../../store/gallery';
-import image from '../../images/aircraft-images/plane-1/plane-1-image-1.jpg'
+import { getAircraft} from '../../store/gallery';
 import './Gallery.css'
 
 const GalleryBrowser = () => {
@@ -72,8 +69,9 @@ const GalleryBrowser = () => {
             <Route path="/aircraft/:aircraftId">
                 <AircraftDetail/>
             </Route>
+            
         </main>
-    )
+        )
 }
 
 export default GalleryBrowser;
