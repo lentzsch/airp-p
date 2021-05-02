@@ -43,7 +43,7 @@ const GalleryBrowser = () => {
     return (
         <main className="gallery">
             {/* <AirportSelector/> */}
-            <nav>
+            <nav className="aircraft-list">
                 {aircraft?.map((aircraft) => {
                     // let image = aircraft.imageUrl1
                     // console.log('aircarft at 0 ----->', aircraft[0])

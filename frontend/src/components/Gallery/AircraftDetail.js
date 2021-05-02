@@ -14,7 +14,7 @@ const AircraftDetail = () => {
     const history = useHistory();
     const aircraft = useSelector(state => (state.gallery[aircraftId]));
     const sessionUser = useSelector(state => state.session.user);
-    const currentLocation = aircraft?.Airport.iataCode;
+    const currentLocation = aircraft?.Airport?.iataCode;
     useEffect(() => {
         if (aircraftId) {
             dispatch(getSingleAircraft(aircraftId))
