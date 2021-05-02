@@ -38,9 +38,6 @@ const AircraftDetail = () => {
 
     let content = (
         <div className="aircraft-detail-lists">
-            <div className={`aircraft-detail-image-container`}>
-                <img src={imageUrl} className="aircraft-detail-image"/>
-            </div>
             <div>
                 {/* <img src={image} alt="" /> */}
                 <h3>Specs:</h3>
@@ -71,6 +68,9 @@ const AircraftDetail = () => {
 
     return (
         <div className="aricraft-detail">
+            <div className={`aircraft-detail-image-container`}>
+                <img src={imageUrl} className="aircraft-detail-image"/>
+            </div>
             {content}
         </div>
     )

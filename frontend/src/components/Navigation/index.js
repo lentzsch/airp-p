@@ -3,6 +3,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import image from '../../images/plane-clipart.png'
 import './Navigation.css';
 
 function Navigation ({ isLoaded }){
@@ -32,8 +33,11 @@ function Navigation ({ isLoaded }){
 
     return (
         <div className="nav-bar">
-        
-                <NavLink exact to="/" className="home-link">Airpnp</NavLink>
+    
+                <NavLink exact to="/" className="home-link">
+                    <img src={image} className="nav-icon"/>
+                    Airpnp
+                    </NavLink>
                 {isLoaded && sessionLinks}
             
         </div>

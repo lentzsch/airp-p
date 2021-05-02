@@ -37,23 +37,31 @@ const GalleryBrowser = () => {
     if (!aircraft.length) {
         return null;
     }
-
+    // console.log('aircraft ----->', aircraft)
+    // console.log('aircraft.Airport ------>', aircraft.Airport)
+    // console.log('aircraft?.Airport.iataCode -------->', aircraft?.Airport.iataCode)
     return (
         <main className="gallery">
             {/* <AirportSelector/> */}
             <nav>
                 {aircraft?.map((aircraft) => {
                     // let image = aircraft.imageUrl1
-                    // console.log(image)
+                    // console.log('aircarft at 0 ----->', aircraft[0])
+                    const airport = aircraft?.Airport
                     return (
                             <div className=" aircarft-container">
                         <NavLink key={aircraft.id} to={`/aircraft/${aircraft.id}`} className="aircraft-link">
-                            
+                                {/* <div className="aircraft-image-container"> */}
                                 <img src={aircraft.imageUrl1} alt='' className="aircaft-image"/>
-                                <div>
+                                {/* </div> */}
+                                {/* <div> */}
+                                <div key={aircraft.id} className="aircraft-list-info">
                                     <div className="primary-text">{`${aircraft.year} ${aircraft.make} ${aircraft.model}`}</div>
-                                    <div className="secondary-text">
-                                        Place Holder Text Here
+                                    {/* <div className="secondary-text">
+                                        {aircraft?.Airport?.iataCode}
+                                    </div> */}
+                                    <div>
+                                        {/* {`${aircraft.Airport?.city}, ${aircraft.Airport?.state}`} */}
                                     </div>
                                 </div>
                         </NavLink>

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router";
 import {getFilteredAircraft } from "../../store/gallery";
 import { getAirports } from "../../store/airports";
+import './AirportSelector.css'
 
 const AirportSelector = () => {
     const { airportId } = useParams()
@@ -25,7 +26,9 @@ const AirportSelector = () => {
     }
     return (
         <div className="airport-selector-container">
-            <p>Filter by Airport</p>
+            <div>
+                Filter by Airport
+            </div>
             <div className="airport-selector">
             <select
                 id="airports"

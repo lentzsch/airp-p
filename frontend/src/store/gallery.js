@@ -27,7 +27,7 @@ export const getFilteredAircraft = (id) => async (dispatch) => {
             dispatch(load(list))
         }
     } else {
-        const res = await csrfFetch(`/api/gallery`, { method: "GET" });
+        const res = await csrfFetch(`/api/gallery`);
 
         if (res.ok) {
             const list = await res.json();
@@ -56,7 +56,7 @@ const galleryReducer = (state = initialState, action) => {
         case LOAD: {
             const allAircraft = {};
             action.list.forEach((aircraft) => {
-                return allAircraft[aircraft.id] = aircraft;
+                allAircraft[aircraft.id] = aircraft;
             });
             return {
                 ...allAircraft,

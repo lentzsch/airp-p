@@ -12,13 +12,13 @@ li {
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
-    background-color: rgba(60, 123, 226, 0.664);
-    width: 350px;
+    background-color: rgba(60, 124, 226, 0.376);
+    width: 400px;
     height: 100px;
     border-radius: 2px;
     padding: 6px;
     justify-content: space-between;
-    margin-top: 20px;
+    
 }
 
 .primary-text {
@@ -29,18 +29,19 @@ li {
 .aircraft-container {
     display: flex;
     /* flex-direction: row; */
-    width: 100%;
+    max-width: 100%;
+    max-height: 100px;
 
 }
 
-.aircraft-image img {
-    max-height: 100px;
-    width: 100px;
+.aircraft-image {
+    max-height: 100%;
+    max-width: 100%;
     /* object-fit: scale-down; */
 }
 
 .aricraft-detail {
-    background-color: rgba(41, 68, 160, 0.76);
+    background-color: rgba(41, 69, 160, 0.616);
     width: auto;
     padding: 6px;
     border-radius: 2px;
@@ -63,4 +64,25 @@ li {
     height: 50px;
     font-weight: bold;
     background-color: rgba(1, 251, 251, 0.815);
+}
+
+.aircraft-detail-image {
+    max-width: 700px;
+}
+
+.aircraft-image-container {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.aircraft-container {
+    max-height: 100%;
+}
+
+.aircraft-list-info {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
 }
