@@ -3,6 +3,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import LoginFormModal from '../LoginFormModal';
+import SignupFormModal from '../SignupFormModal';
 import image from '../../images/plane-clipart.png'
 import './Navigation.css';
 
@@ -21,10 +23,12 @@ function Navigation ({ isLoaded }){
             <>
             <div className='login-signup'>
             <div className='login'>
-                <NavLink to="/login" className="login-link">Log In</NavLink>
+                <LoginFormModal />
+                {/* <NavLink to="/login" className="login-link">Log In</NavLink> */}
             </div>
             <div className='signup'>
-                <NavLink to ="/signup">Sign Up</NavLink>
+                <SignupFormModal />
+                {/* <NavLink to="/signup" className="signup-link">Sign Up</NavLink> */}
             </div>
             </div>
             </>

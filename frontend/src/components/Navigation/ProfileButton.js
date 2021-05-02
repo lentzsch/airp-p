@@ -32,6 +32,7 @@ function ProfileButton({ user }) {
 
     return (
         <>
+            <div className="dropdown-container">
             <button onClick={openMenu}>
                 <i className="fas fa-user" />
             </button>
@@ -41,10 +42,11 @@ function ProfileButton({ user }) {
                     <li>{user.email}</li>
                     <li>{user.pplNumber}</li>
                     <li>
-                        <button onClick={logout}>Log Out</button>
+                        <button className="submit-button" onClick={logout}>Log Out</button>
                     </li>
                 </ul>
             )}
+            </div>
         </>
     );
 }

@@ -33,7 +33,8 @@ router.get('/:airportId(\\d)', asyncHandler(async (req, res) => {
 
     const filteredAircraft = await Aircraft.findAll({
         where: {
-            currentLocationId: airportId
+            currentLocationId: airportId,
+            userId: null,
         }
     })
 

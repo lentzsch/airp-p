@@ -59,12 +59,20 @@ li {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    color: white;
+    font-weight: bold;
 }
 
 .booking-button {
-    height: 50px;
-    font-weight: bold;
-    background-color: rgba(1, 251, 251, 0.815);
+    background-color: rgba(67, 191, 212, 0.863);
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    height: 70px;
+    width: 150px;
 }
 
 .aircraft-detail-image {

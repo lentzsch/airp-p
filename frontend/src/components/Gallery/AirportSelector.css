@@ -3,3 +3,18 @@
     margin-top: 10px;
     padding: 10px;
 }
+
+.airport-selector-prompt {
+    margin-bottom: 6px;
+    color: white;
+    font-weight: bold;
+}
+
+.airport-selector-dropdown {
+    border: none;
+    border-radius: 3px;
+    color: rgba(67, 191, 212, 0.863);
+    background-color: white;
+    font-weight: bold;
+    height: 20px;
+}

@@ -26,11 +26,12 @@ const AirportSelector = () => {
     }
     return (
         <div className="airport-selector-container">
-            <div>
+            <div className="airport-selector-prompt">
                 Filter by Airport
             </div>
             <div className="airport-selector">
             <select
+                className="airport-selector-dropdown"
                 id="airports"
                 name="airports"
                 onChange={(e) => dispatch(getFilteredAircraft(e.target.value))}

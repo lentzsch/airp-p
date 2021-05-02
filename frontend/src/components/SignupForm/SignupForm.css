@@ -1,0 +1,37 @@
+/* frontend/src/components/SignupFormPage/SignupForm.css */
+
+input {
+    margin: 5px;
+    display: flex;
+    border: none;
+    border-radius: 3px;
+    height: 20px
+}
+
+.errors {
+    color: red;
+    font-weight: bolder;
+    padding: auto;;
+}
+
+label {
+    color: white;
+}
+
+button {
+    background-color: rgba(13, 32, 114, 0);
+    color: white;
+    font-size: bold;
+    border: none;
+}
+
+.submit-button {
+    background-color: rgba(67, 191, 212, 0.863);
+    color: white;
+    font-size: bold;
+    border: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    height: 30px;
+    width: 60px;
+}

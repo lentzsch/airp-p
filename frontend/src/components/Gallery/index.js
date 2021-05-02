@@ -47,22 +47,22 @@ const GalleryBrowser = () => {
                 {aircraft?.map((aircraft) => {
                     // let image = aircraft.imageUrl1
                     // console.log('aircarft at 0 ----->', aircraft[0])
-                    const airport = aircraft?.Airport
+                    // const airport = aircraft?.Airport
                     return (
-                            <div className=" aircarft-container">
+                        <div key={`aircraft-${aircraft.id}-container `} className=" aircarft-container">
                         <NavLink key={aircraft.id} to={`/aircraft/${aircraft.id}`} className="aircraft-link">
                                 {/* <div className="aircraft-image-container"> */}
-                                <img src={aircraft.imageUrl1} alt='' className="aircaft-image"/>
+                                <img src={aircraft.imageUrl1} alt='' className="aircaft-image" key={`aircraft-${aircraft.id}-image`}/>
                                 {/* </div> */}
                                 {/* <div> */}
-                                <div key={aircraft.id} className="aircraft-list-info">
-                                    <div className="primary-text">{`${aircraft.year} ${aircraft.make} ${aircraft.model}`}</div>
-                                    {/* <div className="secondary-text">
+                                <div key={`aircraft-${aircraft.id}-list-info`} className="aircraft-list-info">
+                                    <div key={`aircraft-${aircraft.id}-`} className="primary-text">{`${aircraft.year} ${aircraft.make} ${aircraft.model}`}</div>
+                                    <div className="secondary-text">
                                         {aircraft?.Airport?.iataCode}
-                                    </div> */}
-                                    <div>
-                                        {/* {`${aircraft.Airport?.city}, ${aircraft.Airport?.state}`} */}
-                                    </div>
+                                    </div> 
+                                    <div> 
+                                        {`${aircraft.Airport?.city}, ${aircraft.Airport?.state}`}
+                                     </div> 
                                 </div>
                         </NavLink>
                             </div>
