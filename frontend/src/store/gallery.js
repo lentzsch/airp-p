@@ -41,11 +41,11 @@ export const getFilteredAircraft = (id) => async (dispatch) => {
 export const getSingleAircraft = (id) => async (dispatch) => {
     if (id) {
         const res = await csrfFetch(`/api/aircraft/${id}`);
-    
-        if (res.ok) {
-            const aircraft = await res.json();
-            dispatch(getAircraft(aircraft))
-        }
+        return res
+        // if (res.ok) {
+        //     const aircraft = await res.json();
+        //     dispatch(getAircraft(aircraft))
+        // }
     }
 }
 
