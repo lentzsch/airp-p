@@ -24,8 +24,5 @@
   "bugs": {
     "url": "https://github.com/scrub1737/airp-p/issues"
   },
-  "homepage": "https://github.com/scrub1737/airp-p#readme",
-  "devDependencies": {
-    "file-loader": "^6.2.0",
-  }
+  "homepage": "https://github.com/scrub1737/airp-p#readme"
 }
