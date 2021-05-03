@@ -39,7 +39,7 @@ function Navigation ({ isLoaded }){
         <div className="nav-bar">
     
                 <NavLink exact to="/" className="home-link">
-                    <img src={image} className="nav-icon"/>
+                    <img src={image} className="nav-icon" alt=""/>
                     Airpnp
                     </NavLink>
                 {isLoaded && sessionLinks}

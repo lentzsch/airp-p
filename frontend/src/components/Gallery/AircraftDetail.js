@@ -4,7 +4,6 @@ import { useParams } from "react-router";
 import { useHistory } from "react-router-dom"
 import { getSingleAircraft } from "../../store/gallery";
 import { csrfFetch } from "../../store/csrf"
-import image from '../../images/aircraft-images/plane-2/plane-2-image-1.jpg'
 import './Gallery.css'
 
 
@@ -31,7 +30,7 @@ const AircraftDetail = () => {
         const res = await csrfFetch(`/api/aircraft/${id}/book`, {method: "PUT"})
         alert('Aircraft booked!')
         history.push('/')
-        return
+        return res;
         }
         return alert("Please log in to book an Aircraft")      
     }
@@ -69,7 +68,7 @@ const AircraftDetail = () => {
     return (
         <div className="aricraft-detail">
             <div className={`aircraft-detail-image-container`}>
-                <img src={imageUrl} className="aircraft-detail-image"/>
+                <img src={imageUrl} className="aircraft-detail-image" alt=""/>
             </div>
             {content}
         </div>

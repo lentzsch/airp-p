@@ -1,7 +1,7 @@
 // frontend/src/components/Gallery/index.js
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { NavLink, Link, Route } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import AircraftDetail from './AircraftDetail'
 import { getAircraft} from '../../store/gallery';
 import './Gallery.css'

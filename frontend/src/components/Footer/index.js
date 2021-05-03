@@ -13,12 +13,12 @@ function Footer() {
             <div className="footer-links-container">
             <div className="github-link-container">
                 <Link className="github-link" to={{ pathname: "https://github.com/scrub1737" }} target="_blank">
-                    <i class="fab fa-github"></i>
+                    <i className="fab fa-github"></i>
                 </Link>
             </div>
             <div className="linkedin-link-container">
                 <Link className="linkedin-link" to={{ pathname: "https://www.linkedin.com/in/jameslentzsch" }} target="_blank">
-                    <i class="fab fa-linkedin-in"></i>
+                    <i className="fab fa-linkedin-in"></i>
                 </Link>
             </div>
             </div>
