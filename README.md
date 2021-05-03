@@ -38,7 +38,7 @@ In order to enjoy the app, you can either sign in as a demo user with demo crede
  - Using local image urls in React for a mapped array of links provided bugs that I was unable to solve. I was able to find a workaround by using exterior links to a site hosting the images. This works well since I would like to have AWS integration in the future.
 
 ### Code highlights
-Both the getAircraft and getFilteredAircraft thunks use the same action, simplifying the resulting reducer.
+Both the getAircraft and getFilteredAircraft thunks are constructed in such a way that they use the same action, simplifying the resulting reducer.
 
 ```const LOAD = 'gallery/LOAD';
 
