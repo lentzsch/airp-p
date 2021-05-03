@@ -4,11 +4,11 @@ Aipnp, AirPlane and Pilot, is an Airbnb inspired app that allows aircraft owners
 
 In order to enjoy the app, you can either sign in as a demo user with demo credentials, or create your own user. Instructions for both are below.
 
-###To sign in as a demo user:
+### To sign in as a demo user:
 - email: demo@user.io
 - password: password
 
-###To Sign up:
+### To Sign up:
 - All feilds must hav valid values.
 - Certificate number must be 7 digits.
 - Password must be 6 characters long.
