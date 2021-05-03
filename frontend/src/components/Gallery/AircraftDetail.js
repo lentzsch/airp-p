@@ -2,9 +2,10 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router";
 import { useHistory } from "react-router-dom"
-import { getSingleAircraft } from "../../store/gallery";
+import { getSingleAircraft, getAircraft } from "../../store/gallery";
 import { csrfFetch } from "../../store/csrf"
 import './Gallery.css'
+// import { GalleryBrowser } from "./index"
 
 
 const AircraftDetail = () => {
@@ -14,23 +15,28 @@ const AircraftDetail = () => {
     const aircraft = useSelector(state => (state.gallery[aircraftId]));
     const sessionUser = useSelector(state => state.session.user);
     const currentLocation = aircraft?.Airport?.iataCode;
+
     useEffect(() => {
         if (aircraftId) {
             dispatch(getSingleAircraft(aircraftId))
         }
     }, [dispatch, aircraftId])
 
+    // useEffect(() => {
+    //     dispatch(GalleryBrowser)
+    // }, [dispatch])
+
     if (!aircraft) {
         return null;
     }
+    
     let imageUrl = aircraft.imageUrl1
-
     async function bookAircraft(id) {
         if (sessionUser){
         const res = await csrfFetch(`/api/aircraft/${id}/book`, {method: "PUT"})
         alert('Aircraft booked!')
         history.push('/')
-        return res;
+            return res;
         }
         return alert("Please log in to book an Aircraft")      
     }

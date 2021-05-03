@@ -21,8 +21,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+    "eslintConfig": {
+      "extends": "react-app",
+      "rules": {
+        "no-unused-expressions": "off"
+      }
   },
   "browserslist": {
     "production": [
@@ -37,6 +40,8 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-plugin-react": "^7.23.2",
     "file-loader": "^6.2.0",
     "redux-logger": "^3.0.6",
     "url-loader": "^4.1.1"
