@@ -36,3 +36,63 @@ In order to enjoy the app, you can either sign in as a demo user with demo crede
 ## Challenges
  - Planning. Understanding your own limitations from both a time and ability perspective is important on your first solo project. Ambition can lead to a lot of half implamented features and the need to make executive decisions as to what features stay and what goes. As a result, the features that do stay suffer for it.
  - Using local image urls in React for a mapped array of links provided bugs that I was unable to solve. I was able to find a workaround by using exterior links to a site hosting the images. This works well since I would like to have AWS integration in the future.
+
+##Code highlights
+Both the getAircraft and getFilteredAircraft thunks use the same action, simplifying the resulting reducer.
+
+```const LOAD = 'gallery/LOAD';
+
+const load = (list) => ({
+    type: LOAD,
+    list,
+})
+
+export const getAircraft = () => async (dispatch) => {
+    const res = await csrfFetch(`/api/gallery`, {method: "GET"});
+
+    if (res.ok) {
+        const list = await res.json();
+        // console.log(Array.isArray(list))
+        dispatch(load(list))
+    }
+}
+
+export const getFilteredAircraft = (id) => async (dispatch) => {
+    if(id) {
+        const res = await csrfFetch(`/api/gallery/${id}`);
+        
+        if (res.ok) {
+            const list = await res.json();
+            dispatch(load(list))
+        }
+    } else {
+        const res = await csrfFetch(`/api/gallery`);
+
+        if (res.ok) {
+            const list = await res.json();
+            // console.log(Array.isArray(list))
+            dispatch(load(list))
+        }
+    }
+
+}
+
+const initialState = {};
+
+const galleryReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case LOAD: {
+            const allAircraft = {};
+            action.list.forEach((aircraft) => {
+                allAircraft[aircraft.id] = aircraft;
+            });
+            return {
+                ...allAircraft,
+            }
+        }
+        default:
+            return state
+    }
+}
+
+export default galleryReducer```
